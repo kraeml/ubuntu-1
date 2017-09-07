@@ -39,7 +39,7 @@ args() {
         usage
         exit 1
     fi
-    
+
     BOX_NAME=$1
     BOX_SUFFIX=$2
     VERSION=$3
@@ -220,7 +220,7 @@ atlas_publish() {
     atlas_username=$1
     atlas_access_token=$2
 
-    ATLAS_API_URL=https://atlas.hashicorp.com/api/v1
+    ATLAS_API_URL=https://vagrantcloud.com/api/v1
 
     echo "==> Checking for existing box ${BOX_NAME} on ${atlas_username}"
     # Retrieve box
@@ -287,7 +287,7 @@ main() {
     args "$@"
 
     ATLAS_API_URL=https://atlas.hashicorp.com/api/v1
-    atlas_publish ${BOX_CUTTER_ATLAS_USERNAME} ${BOX_CUTTER_ATLAS_ACCESS_TOKEN}
+    #atlas_publish ${BOX_CUTTER_ATLAS_USERNAME} ${BOX_CUTTER_ATLAS_ACCESS_TOKEN}
     atlas_publish ${ATLAS_USERNAME} ${ATLAS_ACCESS_TOKEN}
 }
 
