@@ -69,7 +69,7 @@ major() {
 
 minor() {
     MAJOR_VERSION=${MAJOR_VERSION}
-    MINOR_VERSION=$((${MINOR_VERSION}+1))
+    MINOR_VERSION=$(date +%y)
     PATCH_VERSION=0
     write_version
 }
@@ -77,18 +77,17 @@ minor() {
 patch() {
     MAJOR_VERSION=${MAJOR_VERSION}
     MINOR_VERSION=${MINOR_VERSION}
-    PATCH_VERSION=$((${PATCH_VERSION}+1))
+    PATCH_VERSION=$(date +%m-%d)
     write_version
 }
 
 main() {
     CURRENT_VERSION=$(cat VERSION)
     VERSION_LIST=($(echo ${CURRENT_VERSION} | tr '.' ' '))
-    MAJOR_VERSION=${VERSION_LIST[0]} 
-    MINOR_VERSION=${VERSION_LIST[1]} 
+    MAJOR_VERSION=${VERSION_LIST[0]}
+    MINOR_VERSION=${VERSION_LIST[1]}
     PATCH_VERSION=${VERSION_LIST[2]}
     args "$@"
 }
 
 main "$@"
-
