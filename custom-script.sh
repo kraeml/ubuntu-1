@@ -14,7 +14,9 @@ apt-get update
 apt-get install --yes language-pack-de manpages-de
 apt-get install --yes python3-pip python3-virtualenv libffi-dev libssl-dev cowsay sshpass python3-dev
 apt-get install --yes lxc openvswitch-switch bridge-utils debootstrap lvm2 btrfs-tools
-apt-get install --yes dev-utils build-essential aclocal automake pkg-config git
+apt-get install --yes qemu-user-static
+wget https://d24m.de/assets/lxc-pi -O /usr/lib/lxc/templates/pi
+apt-get install --yes build-essential automake git
 
 # apt-get install --yes python3-jinja2 python3-paramiko python3-yaml python3-httplib2
 # apt-get install --yes python3-lxc python3-flask
